@@ -389,9 +389,5 @@ def is_safe_url(target):
         ref_url.netloc == test_url.netloc
 
 
-# Heroku environment
-if os.environ.get('APP_LOCATION') == 'heroku':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-else:
-    app.run(host='localhost', port=8080, debug=True)
+if __name__ == "__main__":
+    app.run(debug=False, host="0.0.0.0")
