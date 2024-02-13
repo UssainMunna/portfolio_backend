@@ -79,7 +79,7 @@ def connect_to_mongo():
 def index():
     return render_template('index.html')
 
-@app.route('/contacts')
+@app.route('/contacts',methods=['GET'])
 def get_contacts():
     # Fetch contact details from MongoDB
     db = connect_to_mongo()
