@@ -83,7 +83,7 @@ def index():
 def get_contacts():
     # Fetch contact details from MongoDB
     db = connect_to_mongo()
-    collection = db["contacts"]
+    collection = db["contacts_data"]
     contacts = list(collection.find({}, {'_id': 0, 'name': 1, 'email': 1, 'phone': 1}))
 
     return jsonify(contacts)
@@ -91,12 +91,12 @@ def get_contacts():
 @app.route('/contacts', methods=['POST'])
 def add_contact():
     db = connect_to_mongo()
-    collection = db["contacts"]
+    collection = db["contacts_data"]
     # Extract contact data from the POST request
     contact_data = request.json
 
     # Validate the required fields
-    if 'name' not in contact_data or 'email' not in contact_data or 'message' not in contact_data:
+    if 'name' not in contact_data or 'email' not in contact_data or 'phone' not in contact_data:
         return jsonify({'error': 'Missing required fields'}), 400
 
     # Insert the contact data into MongoDB
