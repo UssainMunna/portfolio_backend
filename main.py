@@ -59,15 +59,17 @@ csp = {
 }
 talisman = Talisman(app, content_security_policy=csp)
 
-# Create CSRF protect
-csrf = CSRFProtect()
-csrf.init_app(app)
+# # Create CSRF protect
+# csrf = CSRFProtect()
+# csrf.init_app(app)
 
 # Create login manager
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.anonymous_user = Anonymous
 login_manager.login_view = "login"
+
+
 
 
 #connect to mongo atlas
