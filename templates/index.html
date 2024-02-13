@@ -10,6 +10,29 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+</head>
+<body>
+    <h1>Contact List</h1>
+    <ul>
+        {% for contact in contacts %}
+            <li>
+                <strong>Name:</strong> {{ contact.name }} <br>
+                <strong>Email:</strong> {{ contact.email }} <br>
+                <strong>Phone:</strong> {{ contact.phone }} <br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
 <script>
     // Fetch contact details from Flask route and display them on the page
     fetch('/contacts')
