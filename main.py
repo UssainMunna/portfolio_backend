@@ -25,10 +25,11 @@ from note import Note
 from email_utility import send_email, send_registration_email, send_message_email
 from verification import confirm_token
 from flask_pymongo import pymongo
-
+from flask_cors import CORS
 
 # Create app
 app = Flask(__name__)
+CORS(app)
 
 # Configuration
 config = configparser.ConfigParser()
