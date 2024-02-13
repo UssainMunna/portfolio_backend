@@ -60,8 +60,8 @@ csp = {
 talisman = Talisman(app, content_security_policy=csp)
 
 # # Create CSRF protect
-# csrf = CSRFProtect()
-# csrf.init_app(app)
+csrf = CSRFProtect()
+csrf.init_app(app)
 
 # Create login manager
 login_manager = LoginManager()
